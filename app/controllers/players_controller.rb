@@ -13,6 +13,7 @@ class PlayersController < ApplicationController
 
   def name
   	@player = Player.where("NAME LIKE '%#{params[:name]}%'").first
+    @player ||= Player.where("NAME ILIKE '%#{params[:name]}%'").first
   	render :show
   end
 end
