@@ -10,4 +10,9 @@ class PlayersController < ApplicationController
   def show
   	@player = Player.find(params[:id])
   end
+
+  def name
+  	@player = Player.where("NAME LIKE '%#{params[:name]}%'").first
+  	render :show
+  end
 end

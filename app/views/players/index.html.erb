@@ -1,13 +1,23 @@
 <h1>Players</h1>
 
-Answers taken from <a href="https://www.reddit.com/r/soccerspirits/comments/5jn3l3/all_3_teamwork_answers/?st=j4l0m618&sh=a7e4057e">here</a>
+<div>
+	Answers taken from <a href="https://www.reddit.com/r/soccerspirits/comments/5jn3l3/all_3_teamwork_answers/?st=j4l0m618&sh=a7e4057e" target=_blank>here</a>
+</div>
 
-<br>
+<br />
+
+<div>
+	<%= form_tag("/search", method: "get") do %>
+	  <%= label_tag(:name, "Search for a player:") %>
+	  <%= text_field_tag(:name) %>
+	  <%= submit_tag("Search") %>
+	<% end %>
+</div>
 
 <ul>
 	<%-	@players.each do |player| %>
 		<li>
-			<%= player.name %>: <%= link_to "Quotes", player_path(player) %>
+			<%= link_to player.name, player_path(player) %>
 		</li>
 	<%- end %>
 </ul>
