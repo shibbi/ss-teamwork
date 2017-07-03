@@ -1,0 +1,13 @@
+<h1>Players</h1>
+
+Answers taken from <a href="https://www.reddit.com/r/soccerspirits/comments/5jn3l3/all_3_teamwork_answers/?st=j4l0m618&sh=a7e4057e">here</a>
+
+<br>
+
+<ul>
+	<%-	@players.each do |player| %>
+		<li>
+			<%= player.name %>: <%= link_to "Quotes", player_path(player) %>
+		</li>
+	<%- end %>
+</ul>

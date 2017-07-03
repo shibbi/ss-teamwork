@@ -1,0 +1,12 @@
+<h1><%= @player.name %>'s Page</h1>
+
+<ul>
+	<%- @player.quotes.each do |quote| %>
+		<li>
+			Question: <%= quote.question %>
+			<br>
+			Answer: <%= quote.answer %>
+		</li>
+		<br>
+	<%- end %>
+</ul>
